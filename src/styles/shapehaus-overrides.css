@@ -12,29 +12,134 @@
   --y50: #1d59ec;
 }
 
-/* Nav — white links, blue active/hover accent */
-.nav[data-theme='dark'] .nav-links a,
-.nav[data-theme='light'] .nav-links a {
-  color: var(--white) !important;
+/* ── Logo mark + wordmark ── */
+.nav-logo {
+  gap: 10px;
 }
 
-.nav[data-theme='light'] .nav-logo img,
-.nav[data-theme='light'] .nav-logo .logo-text {
-  filter: none;
+.logo-mark {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+  transition: opacity 0.3s;
+  filter: none !important;
+}
+
+.nav-logo .logo-text {
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  transition: color 0.3s;
+}
+
+.nav[data-theme='light']:not(.nav-menu-open) .nav-logo .logo-text {
   color: var(--navy);
 }
 
-.nav[data-theme='light'] .nav-hamburger span {
+.nav-menu-open .nav-logo .logo-text {
+  color: var(--white) !important;
+}
+
+.splash-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.splash-logo-mark {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.cta-footer-mark {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.cta-wordmark-link {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Nav link visibility ── */
+.nav[data-theme='dark']:not(.nav-menu-open) .nav-links a {
+  color: var(--white) !important;
+}
+
+.nav[data-theme='dark']:not(.nav-menu-open) .nav-links li {
+  border-left-color: #ffffff40 !important;
+}
+
+.nav[data-theme='dark']:not(.nav-menu-open) .nav-links li:last-child {
+  border-right-color: #ffffff40 !important;
+}
+
+.nav[data-theme='light']:not(.nav-menu-open) .nav-links a {
+  color: var(--navy) !important;
+}
+
+.nav[data-theme='light']:not(.nav-menu-open) .nav-links li {
+  border-left-color: var(--cloud) !important;
+}
+
+.nav[data-theme='light']:not(.nav-menu-open) .nav-links li:last-child {
+  border-right-color: var(--cloud) !important;
+}
+
+.nav[data-theme='light']:not(.nav-menu-open) .nav-hamburger span {
   background: var(--navy);
+}
+
+/* Stronger light-nav background so links read on white sections */
+.nav[data-theme='light']:not(.nav-menu-open):before {
+  background: linear-gradient(
+    #ffffff 0%,
+    #fffffff2 55%,
+    #ffffffcc 100%
+  ) !important;
+}
+
+.nav[data-theme='light']:not(.nav-menu-open) {
+  border-bottom-color: var(--cloud) !important;
+}
+
+.nav[data-theme='dark']:not(.nav-menu-open):before {
+  background: linear-gradient(
+    #15213ccc 0%,
+    #15213c99 35%,
+    #15213c55 65%,
+    transparent 100%
+  ) !important;
+}
+
+.nav[data-theme='dark'].nav-scrolled:not(.nav-menu-open) {
+  background: #15213cb3 !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom-color: #ffffff26 !important;
+}
+
+.nav[data-theme='light'].nav-scrolled:not(.nav-menu-open) {
+  background: #ffffffee !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom-color: var(--cloud) !important;
 }
 
 .nav-links li:after {
   background: var(--electric);
 }
 
-.nav-links li.nav-active .nav-arrow path,
-.nav-links li.nav-active a,
-.nav-links li.nav-active:hover a {
+.nav-links li.nav-active .nav-arrow path {
   stroke: var(--electric);
 }
 
@@ -49,21 +154,14 @@
   }
 }
 
-/* Text logo */
-.nav-logo .logo-text {
-  color: var(--white);
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  transition: color 0.3s;
-}
+@media (hover: hover) {
+  .nav[data-theme='light']:not(.nav-menu-open) .nav-links li:hover a {
+    color: var(--electric) !important;
+  }
 
-.nav[data-theme='light'] .nav-logo .logo-text {
-  color: var(--navy);
-}
-
-.nav-menu-open .nav-logo .logo-text {
-  color: var(--white) !important;
+  .nav[data-theme='dark']:not(.nav-menu-open) .nav-links li:hover a {
+    color: var(--white) !important;
+  }
 }
 
 .nav-book-btn {
@@ -75,8 +173,14 @@
   font-size: 10px;
   font-weight: 500;
   margin-left: 8px;
-  transition: background 0.25s, border-color 0.25s;
+  transition: background 0.25s, border-color 0.25s, color 0.25s;
   display: none;
+}
+
+.nav[data-theme='light']:not(.nav-menu-open) .nav-book-btn {
+  color: var(--navy);
+  border-color: var(--cloud);
+  background: var(--white);
 }
 
 @media (min-width: 1025px) {
@@ -90,6 +194,7 @@
   .nav-book-btn:hover {
     background: var(--electric);
     border-color: var(--electric);
+    color: var(--white);
   }
 }
 
@@ -99,6 +204,20 @@
   font-size: 18px;
   font-weight: 500;
   letter-spacing: -0.02em;
+}
+
+/* CTA section logo — use image not rotated text mark */
+.cta-logo-mark {
+  opacity: 1 !important;
+  transform: none !important;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.in-view .cta-logo-mark {
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 /* Who it's for list */

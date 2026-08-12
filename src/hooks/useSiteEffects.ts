@@ -1,4 +1,5 @@
 import { useEffect, useState, type RefObject } from 'react'
+import { useLocation } from 'react-router-dom'
 
 export function useScrollEffects() {
   const [scrolled, setScrolled] = useState(false)
@@ -20,33 +21,56 @@ export function useScrollEffects() {
 
 export function useNavTheme() {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark')
+  const location = useLocation()
 
   useEffect(() => {
-    const sections = document.querySelectorAll<HTMLElement>('[data-nav-theme]')
-    if (!sections.length) return
+    const navHeight = 60
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
+    const resolveTheme = () => {
+      const probeY = navHeight + 8
+      const probeX = Math.round(window.innerWidth / 2)
+      const hit = document.elementFromPoint(probeX, probeY)
+      const section = hit?.closest<HTMLElement>('[data-nav-theme]')
 
-        if (visible[0]) {
-          const nextTheme = visible[0].target.getAttribute('data-nav-theme')
-          if (nextTheme === 'dark' || nextTheme === 'light') {
-            setTheme(nextTheme)
-          }
+      if (section) {
+        const next = section.getAttribute('data-nav-theme')
+        if (next === 'dark' || next === 'light') {
+          setTheme(next)
+          return
         }
-      },
-      {
-        threshold: [0, 0.1, 0.25, 0.5],
-        rootMargin: '-60px 0px -50% 0px',
-      },
-    )
+      }
 
-    sections.forEach((section) => observer.observe(section))
-    return () => observer.disconnect()
-  }, [])
+      // Fallback: section occupying the most space below the nav
+      let best: HTMLElement | null = null
+      let bestArea = 0
+
+      document.querySelectorAll<HTMLElement>('[data-nav-theme]').forEach((el) => {
+        const rect = el.getBoundingClientRect()
+        const top = Math.max(rect.top, navHeight)
+        const bottom = Math.min(rect.bottom, window.innerHeight)
+        const area = Math.max(0, bottom - top)
+
+        if (area > bestArea) {
+          bestArea = area
+          best = el
+        }
+      })
+
+      const fallback = best?.getAttribute('data-nav-theme')
+      if (fallback === 'dark' || fallback === 'light') {
+        setTheme(fallback)
+      }
+    }
+
+    resolveTheme()
+    window.addEventListener('scroll', resolveTheme, { passive: true })
+    window.addEventListener('resize', resolveTheme)
+
+    return () => {
+      window.removeEventListener('scroll', resolveTheme)
+      window.removeEventListener('resize', resolveTheme)
+    }
+  }, [location.pathname])
 
   return theme
 }

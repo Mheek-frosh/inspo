@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import ArrowIcon from './ArrowIcon'
+import { logos } from '../assets/paths'
 import { useBookSession } from '../context/BookSessionContext'
 
 const navItems: Array<{
@@ -32,6 +33,7 @@ export default function Navigation({
   onToggleMenu,
 }: NavigationProps) {
   const { openBookSession } = useBookSession()
+  const markSrc = theme === 'light' && !menuOpen ? logos.markBlue : logos.markWhite
 
   const navClass = [
     'nav',
@@ -48,6 +50,12 @@ export default function Navigation({
       <div className={frostClass} />
       <nav className={navClass} data-theme={theme}>
         <Link className="nav-logo" to="/">
+          <img
+            src={markSrc}
+            alt=""
+            className="logo-mark"
+            aria-hidden="true"
+          />
           <span className="logo-text">ShapeHaus</span>
         </Link>
         <button
@@ -75,7 +83,10 @@ export default function Navigation({
               >
                 {item.label}
               </Link>
-              <ArrowIcon stroke="white" className="nav-arrow" />
+              <ArrowIcon
+                stroke={menuOpen || theme === 'dark' ? 'white' : 'var(--navy)'}
+                className="nav-arrow"
+              />
             </li>
           ))}
           <li className="nav-book-li">

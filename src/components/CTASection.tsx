@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import ScrollReveal from './ScrollReveal'
 import Button from './Button'
+import { logos } from '../assets/paths'
 import { useBookSession } from '../context/BookSessionContext'
 
 type CTASectionProps = {
@@ -24,9 +25,12 @@ export default function CTASection({
     <section className="cta-section">
       <div className="cta-card">
         <ScrollReveal>
-          <span className="cta-logo-mark cta-wordmark-text" aria-hidden="true">
-            SH
-          </span>
+          <img
+            src={logos.markBlue}
+            alt=""
+            className="cta-logo-mark"
+            aria-hidden="true"
+          />
           <div className="cta-center">
             <h2 className="cta-headline">{headline}</h2>
             {subtext && <p className="body-lg" style={{ textAlign: 'center', maxWidth: 480 }}>{subtext}</p>}
@@ -48,6 +52,7 @@ export function CTAFooter() {
     <div className="cta-footer">
       <p className="cta-footer-copy">&copy; 2026 ShapeHaus</p>
       <a href="/" className="cta-wordmark-link">
+        <img src={logos.markWhite} alt="" className="cta-footer-mark" aria-hidden="true" />
         <span className="cta-wordmark-text">ShapeHaus</span>
       </a>
       <div className="cta-footer-meta">

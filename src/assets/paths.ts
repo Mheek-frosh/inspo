@@ -13,10 +13,10 @@ export const images = {
 } as const
 
 export const logos = {
-  logo: '/assets/logos/mp2-logo.svg',
-  logomark: '/assets/logos/mp2-logomark.svg',
-  wordmark: '/assets/logos/mp2-wordmark.svg',
-  favicon: '/assets/logos/MP2-Favicon.png',
+  markBlue: '/assets/logos/shapehaus-mark-blue.png',
+  markWhite: '/assets/logos/shapehaus-mark-white.png',
+  favicon: '/assets/logos/favicon.png',
+  faviconApple: '/assets/logos/favicon-180.png',
 } as const
 
 export const icons = {
