@@ -1,7 +1,7 @@
 export const images = {
   homeHero: '/assets/images/newhero.png',
   about: '/assets/images/aboutus.jpeg',
-  services: '/assets/images/mp2-services.jpg',
+  services: '/assets/images/serviceh.png',
   caraPortrait: '/assets/images/mp2-cara-portrait.jpg',
   people: '/assets/images/mp2-people.jpg',
   walking: '/assets/images/mp2-walking.jpg',
