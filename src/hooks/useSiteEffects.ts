@@ -40,11 +40,11 @@ export function useNavTheme() {
         }
       }
 
-      // Fallback: section occupying the most space below the nav
-      let best: HTMLElement | null = null
+      const sections = document.querySelectorAll<HTMLElement>('[data-nav-theme]')
+      let bestEl: HTMLElement | null = null
       let bestArea = 0
 
-      document.querySelectorAll<HTMLElement>('[data-nav-theme]').forEach((el) => {
+      for (const el of sections) {
         const rect = el.getBoundingClientRect()
         const top = Math.max(rect.top, navHeight)
         const bottom = Math.min(rect.bottom, window.innerHeight)
@@ -52,11 +52,11 @@ export function useNavTheme() {
 
         if (area > bestArea) {
           bestArea = area
-          best = el
+          bestEl = el
         }
-      })
+      }
 
-      const fallback = best?.getAttribute('data-nav-theme')
+      const fallback = bestEl?.getAttribute('data-nav-theme')
       if (fallback === 'dark' || fallback === 'light') {
         setTheme(fallback)
       }
