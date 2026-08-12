@@ -296,6 +296,10 @@
   color: var(--cloud);
 }
 
+.svc-hero h1 {
+  white-space: normal;
+}
+
 .about-hero .body-lg,
 .svc-hero .body-lg,
 .contact-hero .body-lg {
