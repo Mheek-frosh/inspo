@@ -21,6 +21,7 @@ type NavigationProps = {
   menuOpen: boolean
   scrolled: boolean
   frostHidden: boolean
+  homeHero?: boolean
   onToggleMenu: () => void
 }
 
@@ -30,6 +31,7 @@ export default function Navigation({
   menuOpen,
   scrolled,
   frostHidden,
+  homeHero = false,
   onToggleMenu,
 }: NavigationProps) {
   const { openBookSession } = useBookSession()
@@ -39,6 +41,7 @@ export default function Navigation({
     'nav',
     scrolled ? 'nav-scrolled' : '',
     menuOpen ? 'nav-menu-open' : '',
+    homeHero && !menuOpen ? 'nav--home-hero' : '',
   ]
     .filter(Boolean)
     .join(' ')

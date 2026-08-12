@@ -1,4 +1,5 @@
 import ArrowIcon from '../components/ArrowIcon'
+import Button from '../components/Button'
 import ScrollReveal from '../components/ScrollReveal'
 import StripeWrap from '../components/StripeWrap'
 import CTASection from '../components/CTASection'
@@ -64,13 +65,21 @@ export default function ServicesPage({
   return (
     <>
       <section className={heroClass} data-nav-theme="dark">
+        <div className="animated-stripe" />
         <div className="svc-hero-photo">
           <img src={images.services} alt="Strength and movement programs" />
+          <div className="hero-bottom">
+            <div className="hero-headline">
+              <h1>
+                Build Strength. Restore Balance.{' '}
+                <span className="dim">Move Better.</span>
+              </h1>
+            </div>
+            <div className="hero-text">
+              <Button label="Get Started" href="/contact" white />
+            </div>
+          </div>
         </div>
-        <div className="svc-hero-text">
-          <h1>Build Strength. Restore Balance. Move Better.</h1>
-        </div>
-        <div className="animated-stripe" />
       </section>
 
       <StripeWrap />

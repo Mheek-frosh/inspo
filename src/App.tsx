@@ -48,6 +48,7 @@ function AppContent() {
         menuOpen={menuOpen}
         scrolled={scrolled}
         frostHidden={frostHidden}
+        homeHero={location.pathname === '/' && !scrolled}
         onToggleMenu={() => setMenuOpen((open) => !open)}
       />
       <Routes>

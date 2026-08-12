@@ -220,6 +220,89 @@
   transform: none !important;
 }
 
+.nav[data-theme='dark'].nav--home-hero:not(.nav-menu-open) {
+  background: #5a6575;
+  border-bottom-color: #ffffff26;
+}
+
+.nav[data-theme='dark'].nav--home-hero:not(.nav-menu-open):before {
+  background: transparent;
+}
+
+/* Home hero — wide image below nav (reference layout) */
+.hero.hero--wide {
+  background: #5a6575;
+  min-height: 100vh;
+}
+
+.hero.hero--wide .hero-photo--reformer {
+  top: 60px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: linear-gradient(180deg, #626e7e 0%, #5a6575 45%, #505a68 100%);
+}
+
+.hero.hero--wide .hero-photo--reformer > img {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: bottom center;
+  flex-shrink: 0;
+}
+
+.hero.hero--wide .hero-photo--reformer:after {
+  background: linear-gradient(
+    to bottom,
+    #5a657580 0%,
+    transparent 28%,
+    transparent 100%
+  );
+}
+
+.hero.hero--wide .hero-bottom {
+  bottom: auto;
+  top: clamp(72px, 14vh, 160px);
+}
+
+@media (max-width: 768px) {
+  .hero.hero--wide .hero-bottom {
+    top: 48px;
+    left: 24px;
+    right: 24px;
+  }
+}
+
+/* Inner-page heroes — match home two-column hero layout */
+.about-hero-photo,
+.svc-hero-photo {
+  z-index: 1;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.about-hero-photo .hero-bottom,
+.svc-hero-photo .hero-bottom {
+  z-index: 3;
+}
+
+.about-hero h1 .dim,
+.svc-hero h1 .dim,
+.contact-hero h1 .dim {
+  color: var(--cloud);
+}
+
+.about-hero .body-lg,
+.svc-hero .body-lg,
+.contact-hero .body-lg {
+  color: var(--white);
+  max-width: 474px;
+}
+
 /* Who it's for list */
 .who-list {
   display: flex;

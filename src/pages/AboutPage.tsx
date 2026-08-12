@@ -1,3 +1,4 @@
+import Button from '../components/Button'
 import ScrollReveal from '../components/ScrollReveal'
 import StripeWrap from '../components/StripeWrap'
 import CTASection from '../components/CTASection'
@@ -32,13 +33,21 @@ export default function AboutPage({ heroLoaded, splashActive }: AboutPageProps) 
   return (
     <>
       <section className={heroClass} data-nav-theme="dark">
+        <div className="animated-stripe" />
         <div className="about-hero-photo">
           <img src={images.about} alt="Strength and movement training" />
+          <div className="hero-bottom">
+            <div className="hero-headline">
+              <h1>
+                A Stronger Body Starts With a{' '}
+                <span className="dim">Stronger Foundation.</span>
+              </h1>
+            </div>
+            <div className="hero-text">
+              <Button label="Start Your Journey" href="/contact" white />
+            </div>
+          </div>
         </div>
-        <div className="about-hero-text">
-          <h1>A Stronger Body Starts With a Stronger Foundation.</h1>
-        </div>
-        <div className="animated-stripe" />
       </section>
 
       <StripeWrap />

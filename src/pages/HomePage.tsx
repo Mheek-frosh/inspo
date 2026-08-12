@@ -43,6 +43,7 @@ export default function HomePage({ heroLoaded, splashActive }: HomePageProps) {
 
   const heroClass = [
     'hero',
+    'hero--wide',
     heroLoaded || pageHeroLoaded ? 'hero-loaded' : '',
     splashActive ? 'splash-active' : '',
   ]
@@ -53,8 +54,8 @@ export default function HomePage({ heroLoaded, splashActive }: HomePageProps) {
     <>
       <section className={heroClass} id="hero" data-nav-theme="dark">
         <div className="animated-stripe" />
-        <div className="hero-photo">
-          <img src={images.homeHero} alt="Guided movement and strength training" />
+        <div className="hero-photo hero-photo--reformer">
+          <img src={images.homeHero} alt="Pilates reformer strength training session" />
           <div className="hero-bottom">
             <div className="hero-headline">
               <h1>
