@@ -296,6 +296,10 @@
   color: var(--cloud);
 }
 
+.hero--wide h1 .dim {
+  color: var(--white);
+}
+
 .svc-hero h1 {
   white-space: normal;
 }
