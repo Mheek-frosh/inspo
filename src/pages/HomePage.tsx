@@ -122,7 +122,7 @@ export default function HomePage({ heroLoaded, splashActive }: HomePageProps) {
         <div className="about-photo">
           <div className="about-photo-wrap">
             <div className="about-photo-parallax" ref={parallaxRef}>
-              <img src={images.walking} alt="Person in guided movement session" />
+              <img src={images.gym} alt="Woman exercising at home" />
             </div>
             <div className="about-badge-group">
               <div className="about-badge-accent" />

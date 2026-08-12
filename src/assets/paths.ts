@@ -4,6 +4,7 @@ export const images = {
   services: '/assets/images/mp2-services.jpg',
   caraPortrait: '/assets/images/mp2-cara-portrait.jpg',
   people: '/assets/images/mp2-people.jpg',
+  gym: '/assets/images/gymgirl.png',
   walking: '/assets/images/mp2-walking.jpg',
   pattern: '/assets/images/PATTERN.jpg',
   testimonialKatie: '/assets/images/testimonial-katie-malone.jpg',
