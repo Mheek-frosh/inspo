@@ -1,9 +1,10 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import Button from '../components/Button'
 import ScrollReveal from '../components/ScrollReveal'
 import StripeWrap from '../components/StripeWrap'
 import WhoItsFor from '../components/WhoItsFor'
 import CTASection from '../components/CTASection'
+import JobApplicationModal from '../components/JobApplicationModal'
 import { images } from '../assets/paths'
 import { useHeroLoaded, useParallax, usePatternParallax } from '../hooks/useSiteEffects'
 
@@ -34,6 +35,7 @@ type HomePageProps = {
 }
 
 export default function HomePage({ heroLoaded, splashActive }: HomePageProps) {
+  const [applicationOpen, setApplicationOpen] = useState(false)
   const parallaxRef = useRef<HTMLDivElement>(null)
   const patternRef = useRef<HTMLDivElement>(null)
   const pageHeroLoaded = useHeroLoaded(splashActive ? 1600 : 50)
@@ -92,11 +94,16 @@ export default function HomePage({ heroLoaded, splashActive }: HomePageProps) {
           </div>
           <Button
             label="Apply Now"
-            href="mailto:m.usidamen@gmail.com?subject=Application%20for%20Admin%20Assistant"
+            onClick={() => setApplicationOpen(true)}
             white
           />
         </ScrollReveal>
       </section>
+
+      <JobApplicationModal
+        isOpen={applicationOpen}
+        onClose={() => setApplicationOpen(false)}
+      />
 
       <section className="s2" id="what-we-do" data-nav-theme="light">
         <div className="s2-left">

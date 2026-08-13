@@ -449,6 +449,258 @@
   }
 }
 
+/* Admin Assistant application modal */
+.job-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #15213ccc;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: intro-fade 0.2s ease-out both;
+}
+
+.job-modal-panel {
+  position: relative;
+  width: min(720px, 100%);
+  max-height: min(880px, 92vh);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--white);
+  padding: 44px;
+  box-shadow: 0 32px 90px #0d1a3999;
+  animation: intro-text 0.35s cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+.job-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--navy);
+  font-size: 28px;
+  line-height: 1;
+}
+
+.job-modal-close:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.job-modal-heading {
+  margin-bottom: 28px;
+  padding-right: 36px;
+}
+
+.job-modal-heading h2 {
+  margin: 10px 0 14px;
+  font-size: clamp(32px, 5vw, 48px);
+}
+
+.job-modal-heading .body {
+  max-width: 590px;
+  color: var(--demoted);
+}
+
+.job-application-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.job-form-wide,
+.job-submit-button {
+  grid-column: 1 / -1;
+}
+
+.job-file-upload {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 82px;
+  padding: 16px;
+  border: 1px dashed var(--electric);
+  background: #f4f7fb;
+  color: var(--navy);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.job-file-upload:hover {
+  border-color: var(--navy);
+  background: #e8eef5;
+  transform: translateY(-1px);
+}
+
+.job-file-upload > span:last-child {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.job-file-upload strong {
+  overflow: hidden;
+  font-size: 15px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.job-file-upload small {
+  color: var(--demoted);
+  font-size: 12px;
+}
+
+.job-file-icon {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: var(--electric);
+  color: var(--white);
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.job-file-input,
+.job-honeypot,
+.job-response-frame {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.job-file-help,
+.job-file-error {
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.job-file-help {
+  color: var(--demoted);
+}
+
+.job-file-error {
+  color: #b42318;
+}
+
+.job-submit-button {
+  margin-top: 4px;
+}
+
+.job-submit-button:disabled {
+  cursor: wait;
+  opacity: 0.75;
+}
+
+.job-submission-error {
+  grid-column: 1 / -1;
+  color: #b42318;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.job-application-success {
+  display: flex;
+  min-height: 470px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.job-success-mark {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 26px;
+}
+
+.job-success-mark svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: var(--electric);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.job-success-mark circle {
+  stroke-dasharray: 176;
+  stroke-dashoffset: 176;
+  animation: booking-circle 0.65s ease-out 0.15s forwards;
+}
+
+.job-success-mark path {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: booking-check 0.45s ease-out 0.7s forwards;
+}
+
+.job-application-success h2 {
+  margin: 12px 0 14px;
+}
+
+.job-application-success .body {
+  max-width: 500px;
+  color: var(--demoted);
+}
+
+.job-success-button {
+  margin-top: 28px;
+  padding: 14px 30px;
+  background: var(--electric);
+  color: var(--white);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .job-modal-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .job-modal-panel {
+    width: 100%;
+    max-height: 94svh;
+    padding: 40px 24px 28px;
+  }
+
+  .job-application-form {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .job-form-wide,
+  .job-submit-button,
+  .job-submission-error {
+    grid-column: auto;
+  }
+
+  .job-application-success {
+    min-height: 60svh;
+  }
+}
+
 .svc-hero h1 {
   white-space: normal;
 }
