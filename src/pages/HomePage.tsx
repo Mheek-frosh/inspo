@@ -75,6 +75,29 @@ export default function HomePage({ heroLoaded, splashActive }: HomePageProps) {
 
       <StripeWrap />
 
+      <section className="hiring-banner" data-nav-theme="dark" aria-labelledby="hiring-title">
+        <div className="hiring-banner-orbit" aria-hidden="true" />
+        <ScrollReveal className="hiring-banner-inner">
+          <div className="hiring-banner-label">
+            <span className="hiring-banner-pulse" aria-hidden="true" />
+            We&apos;re Hiring
+          </div>
+          <div className="hiring-banner-copy">
+            <p className="eyebrow">Position available</p>
+            <h2 id="hiring-title">Admin Assistant</h2>
+            <p className="body-lg">
+              Join Biomusclepilates and help create a welcoming, organized experience for
+              every client.
+            </p>
+          </div>
+          <Button
+            label="Apply Now"
+            href="mailto:m.usidamen@gmail.com?subject=Application%20for%20Admin%20Assistant"
+            white
+          />
+        </ScrollReveal>
+      </section>
+
       <section className="s2" id="what-we-do" data-nav-theme="light">
         <div className="s2-left">
           <ScrollReveal className="s2-content">

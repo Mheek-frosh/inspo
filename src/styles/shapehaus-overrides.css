@@ -300,6 +300,155 @@
   color: var(--white);
 }
 
+/* Homepage hiring promotion */
+.hiring-banner {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy);
+  padding: 64px 72px;
+  isolation: isolate;
+}
+
+.hiring-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(120deg, var(--navy) 0%, var(--electric) 100%);
+}
+
+.hiring-banner-orbit {
+  position: absolute;
+  z-index: -1;
+  width: 360px;
+  height: 360px;
+  border: 1px solid #ffffff2e;
+  border-radius: 50%;
+  top: 50%;
+  right: 8%;
+  transform: translateY(-50%);
+}
+
+.hiring-banner-orbit::before,
+.hiring-banner-orbit::after {
+  content: '';
+  position: absolute;
+  border: 1px solid #ffffff1f;
+  border-radius: 50%;
+}
+
+.hiring-banner-orbit::before {
+  inset: 48px;
+}
+
+.hiring-banner-orbit::after {
+  inset: 96px;
+  background: #ffffff0a;
+}
+
+.hiring-banner-inner {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 48px;
+  position: relative;
+  z-index: 1;
+}
+
+.hiring-banner-label {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--yellow);
+  color: var(--dark-navy);
+  padding: 12px 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.hiring-banner-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--electric);
+  box-shadow: 0 0 0 0 #1d59ec66;
+  animation: hiring-pulse 2s ease-out infinite;
+}
+
+.hiring-banner-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hiring-banner .eyebrow {
+  color: #ffffffb3;
+}
+
+.hiring-banner h2 {
+  color: var(--white);
+  font-size: clamp(36px, 4vw, 64px);
+}
+
+.hiring-banner .body-lg {
+  color: var(--cloud);
+  max-width: 620px;
+}
+
+.hiring-banner .btn {
+  align-self: center;
+}
+
+@keyframes hiring-pulse {
+  70% {
+    box-shadow: 0 0 0 9px #1d59ec00;
+  }
+  100% {
+    box-shadow: 0 0 0 0 #1d59ec00;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hiring-banner {
+    padding: 56px 40px;
+  }
+
+  .hiring-banner-inner {
+    grid-template-columns: 1fr auto;
+    gap: 28px 40px;
+  }
+
+  .hiring-banner-label {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .hiring-banner {
+    padding: 40px 24px;
+  }
+
+  .hiring-banner-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .hiring-banner-label {
+    grid-column: auto;
+  }
+
+  .hiring-banner .btn {
+    align-self: flex-start;
+  }
+
+  .hiring-banner-orbit {
+    right: -180px;
+  }
+}
+
 .svc-hero h1 {
   white-space: normal;
 }
