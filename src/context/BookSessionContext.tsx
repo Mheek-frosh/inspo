@@ -3,27 +3,23 @@ import {
   useCallback,
   useContext,
   useMemo,
-  useState,
   type ReactNode,
 } from 'react'
 
 type BookSessionContextValue = {
-  isOpen: boolean
   openBookSession: () => void
-  closeBookSession: () => void
 }
 
 const BookSessionContext = createContext<BookSessionContextValue | null>(null)
 
 export function BookSessionProvider({ children }: { children: ReactNode }) {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const openBookSession = useCallback(() => setIsOpen(true), [])
-  const closeBookSession = useCallback(() => setIsOpen(false), [])
+  const openBookSession = useCallback(() => {
+    document.querySelector<HTMLAnchorElement>('#breely-booking-trigger')?.click()
+  }, [])
 
   const value = useMemo(
-    () => ({ isOpen, openBookSession, closeBookSession }),
-    [isOpen, openBookSession, closeBookSession],
+    () => ({ openBookSession }),
+    [openBookSession],
   )
 
   return (

@@ -362,11 +362,11 @@
   }
 }
 
-/* Book session modal */
-.modal-overlay {
+/* Breely booking success */
+.booking-success-overlay {
   position: fixed;
   inset: 0;
-  z-index: 200;
+  z-index: 10000;
   background: #15213c99;
   backdrop-filter: blur(6px);
   display: flex;
@@ -376,18 +376,17 @@
   animation: intro-fade 0.25s ease-out both;
 }
 
-.modal-panel {
+.booking-success-card {
   background: var(--white);
   width: 100%;
-  max-width: 520px;
-  max-height: 90vh;
-  overflow-y: auto;
-  padding: 40px;
+  max-width: 460px;
+  padding: 48px 40px 40px;
   position: relative;
+  text-align: center;
   animation: intro-text 0.35s cubic-bezier(0.25, 1, 0.5, 1) both;
 }
 
-.modal-close {
+.booking-success-close {
   position: absolute;
   top: 16px;
   right: 16px;
@@ -401,19 +400,52 @@
   line-height: 1;
 }
 
-.modal-panel h2 {
-  margin-bottom: 8px;
+.booking-success-mark {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 24px;
 }
 
-.modal-panel .body {
-  margin-bottom: 24px;
+.booking-success-mark svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: var(--electric);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.booking-success-mark circle {
+  stroke-dasharray: 176;
+  stroke-dashoffset: 176;
+  animation: booking-circle 0.65s ease-out 0.15s forwards;
+}
+
+.booking-success-mark path {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: booking-check 0.45s ease-out 0.7s forwards;
+}
+
+.booking-success-card h2 {
+  margin: 10px 0 12px;
+}
+
+.booking-success-card .body {
   color: var(--demoted);
 }
 
-.modal-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+@keyframes booking-circle {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes booking-check {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 /* Floating book session */
