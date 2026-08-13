@@ -5,7 +5,7 @@ export const images = {
   caraPortrait: '/assets/images/mp2-cara-portrait.jpg',
   people: '/assets/images/mp2-people.jpg',
   walking: '/assets/images/mp2-walking.jpg',
-  gym: '/assets/images/gymgirl.png',
+  gym: '/assets/images/male.jpeg',
   pattern: '/assets/images/PATTERN.jpg',
   testimonialKatie: '/assets/images/testimonial-katie-malone.jpg',
   testimonialMark: '/assets/images/testimonial-mark-allan.jpg',
