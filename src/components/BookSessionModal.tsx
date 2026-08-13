@@ -37,7 +37,7 @@ export default function BookSessionModal() {
         >
           ×
         </button>
-        <p className="eyebrow">ShapeHaus</p>
+        <p className="eyebrow">Biomusclepilates</p>
         <h2 id="book-session-title">Book a Session</h2>
         <p className="body">
           Tell us what you&apos;d like to work on — strength, core development,
@@ -50,7 +50,7 @@ export default function BookSessionModal() {
           method="POST"
           onSubmit={closeBookSession}
         >
-          <input type="hidden" name="_subject" value="Book a Session — ShapeHaus" />
+          <input type="hidden" name="_subject" value="Book a Session — Biomusclepilates" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />
           <div className="form-group">

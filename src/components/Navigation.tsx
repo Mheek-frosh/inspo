@@ -57,7 +57,7 @@ export default function Navigation({
             className="logo-mark"
             aria-hidden="true"
           />
-          <span className="logo-text">ShapeHaus</span>
+          <span className="logo-text">Biomusclepilates</span>
         </Link>
         <button
           type="button"

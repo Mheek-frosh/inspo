@@ -50,10 +50,10 @@ export default function CTASection({
 export function CTAFooter() {
   return (
     <div className="cta-footer">
-      <p className="cta-footer-copy">&copy; 2026 ShapeHaus</p>
+      <p className="cta-footer-copy">&copy; 2026 Biomusclepilates</p>
       <a href="/" className="cta-wordmark-link">
         <img src={logos.markWhite} alt="" className="cta-footer-mark" aria-hidden="true" />
-        <span className="cta-wordmark-text">ShapeHaus</span>
+        <span className="cta-wordmark-text">Biomusclepilates</span>
       </a>
       <div className="cta-footer-meta">
         <a className="cta-footer-credit" href="/privacy">

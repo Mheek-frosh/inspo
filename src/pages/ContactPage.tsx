@@ -67,7 +67,7 @@ export default function ContactPage({
             <input
               type="hidden"
               name="_subject"
-              value="New contact form submission — ShapeHaus"
+              value="New contact form submission — Biomusclepilates"
             />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
