@@ -51,9 +51,9 @@ export default function ContactPage({
           <div className="contact-info">
             <div className="contact-info-block">
               <p className="eyebrow">Contact Information</p>
-              <a href="mailto:hello@shapehaus.com" className="contact-email">
+              <a href="mailto:m.usidamen@gmail.com" className="contact-email">
                 <ArrowIcon className="contact-arrow" />
-                hello@shapehaus.com
+                m.usidamen@gmail.com
               </a>
             </div>
           </div>
@@ -61,7 +61,7 @@ export default function ContactPage({
         <div className="contact-right">
           <form
             className="contact-form"
-            action="https://formsubmit.co/hello@shapehaus.com"
+            action="https://formsubmit.co/m.usidamen@gmail.com"
             method="POST"
           >
             <input
@@ -71,6 +71,7 @@ export default function ContactPage({
             />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_cc" value="cggguuup@gmail.com" />
             <div className="form-group">
               <label className="form-label" htmlFor="name">
                 Name

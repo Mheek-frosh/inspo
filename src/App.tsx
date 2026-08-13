@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import Splash from './components/Splash'
 import BookSessionModal, { FloatingBookButton } from './components/BookSessionModal'
@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import ServicesPage from './pages/ServicesPage'
 import ContactPage from './pages/ContactPage'
+import PrivacyPage from './pages/PrivacyPage'
 import {
   useHeroLoaded,
   useNavTheme,
@@ -56,6 +57,8 @@ function AppContent() {
         <Route path="/about" element={<AboutPage {...pageProps} />} />
         <Route path="/services" element={<ServicesPage {...pageProps} />} />
         <Route path="/contact" element={<ContactPage {...pageProps} />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <BookSessionModal />
       <FloatingBookButton />
