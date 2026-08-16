@@ -57,25 +57,24 @@ export default function AboutPage({ heroLoaded, splashActive }: AboutPageProps) 
             bottom: '50%',
             left: '50%',
             transform: 'translate(-50%, 50%)',
-            padding: '0 20px',
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '70px',
+            padding: '0 40px',
             backgroundColor: 'var(--electric)',
             color: 'white',
             border: 'none',
-            borderRadius: '0',
             cursor: 'pointer',
-            fontSize: '10px',
-            fontWeight: '400',
+            fontSize: '14px',
+            fontWeight: '500',
             letterSpacing: '2px',
-            zIndex: 10,
-            height: '56px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
             textTransform: 'uppercase',
             fontFamily: 'var(--font)',
+            zIndex: 10,
           }}
         >
-          Book a Session
+          BOOK A SESSION
         </button>
       </section>
 
