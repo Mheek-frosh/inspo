@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import Splash from './components/Splash'
-import BookSessionModal, { FloatingBookButton } from './components/BookSessionModal'
+import BookSessionModal from './components/BookSessionModal'
 import { BookSessionProvider } from './context/BookSessionContext'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
@@ -61,7 +61,6 @@ function AppContent() {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <BookSessionModal />
-      <FloatingBookButton />
     </>
   )
 }

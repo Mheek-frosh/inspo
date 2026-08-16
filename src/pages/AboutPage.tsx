@@ -46,28 +46,31 @@ export default function AboutPage({ heroLoaded, splashActive }: AboutPageProps) 
               </h1>
             </div>
             <div className="hero-text">
-              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Button label="Start Your Journey" href="/contact" white />
-                <button
-                  onClick={openBookSession}
-                  style={{
-                    padding: '10px 20px',
-                    backgroundColor: 'var(--electric)',
-                    color: 'white',
-                    border: 'none',
-                    borderRadius: '4px',
-                    cursor: 'pointer',
-                    fontSize: '14px',
-                    fontWeight: '500',
-                    letterSpacing: '0.5px',
-                  }}
-                >
-                  Book a Session
-                </button>
-              </div>
+              <Button label="Start Your Journey" href="/contact" white />
             </div>
           </div>
         </div>
+        <button
+          onClick={openBookSession}
+          style={{
+            position: 'absolute',
+            bottom: '50%',
+            left: '50%',
+            transform: 'translate(-50%, 50%)',
+            padding: '10px 20px',
+            backgroundColor: 'var(--electric)',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            fontSize: '14px',
+            fontWeight: '500',
+            letterSpacing: '0.5px',
+            zIndex: 10,
+          }}
+        >
+          Book a Session
+        </button>
       </section>
 
       <StripeWrap />
