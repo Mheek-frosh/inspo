@@ -39,15 +39,20 @@ export default function ContactPage({
             onClick={openBookSession}
             style={{
               marginTop: '1.5rem',
-              padding: '10px 20px',
+              padding: '16px 32px',
               backgroundColor: 'var(--electric)',
               color: 'white',
               border: 'none',
               borderRadius: '4px',
               cursor: 'pointer',
-              fontSize: '14px',
-              fontWeight: '500',
-              letterSpacing: '0.5px',
+              fontSize: '16px',
+              fontWeight: '600',
+              letterSpacing: '1px',
+              minWidth: '180px',
+              height: '56px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
             Book a Session
