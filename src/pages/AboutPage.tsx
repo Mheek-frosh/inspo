@@ -4,6 +4,7 @@ import StripeWrap from '../components/StripeWrap'
 import CTASection from '../components/CTASection'
 import { images } from '../assets/paths'
 import { useHeroLoaded } from '../hooks/useSiteEffects'
+import { useBookSession } from '../context/BookSessionContext'
 
 const philosophyPoints = [
   'Targeted muscle strengthening',
@@ -20,6 +21,7 @@ type AboutPageProps = {
 }
 
 export default function AboutPage({ heroLoaded, splashActive }: AboutPageProps) {
+  const { openBookSession } = useBookSession()
   const pageHeroLoaded = useHeroLoaded(splashActive ? 1600 : 50)
 
   const heroClass = [
@@ -44,7 +46,25 @@ export default function AboutPage({ heroLoaded, splashActive }: AboutPageProps) 
               </h1>
             </div>
             <div className="hero-text">
-              <Button label="Start Your Journey" href="/contact" white />
+              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <Button label="Start Your Journey" href="/contact" white />
+                <button
+                  onClick={openBookSession}
+                  style={{
+                    padding: '10px 20px',
+                    backgroundColor: 'var(--electric)',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    fontSize: '14px',
+                    fontWeight: '500',
+                    letterSpacing: '0.5px',
+                  }}
+                >
+                  Book a Session
+                </button>
+              </div>
             </div>
           </div>
         </div>

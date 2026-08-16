@@ -5,6 +5,7 @@ import StripeWrap from '../components/StripeWrap'
 import CTASection from '../components/CTASection'
 import { images } from '../assets/paths'
 import { useHeroLoaded } from '../hooks/useSiteEffects'
+import { useBookSession } from '../context/BookSessionContext'
 
 type ContactPageProps = {
   heroLoaded: boolean
@@ -15,6 +16,7 @@ export default function ContactPage({
   heroLoaded,
   splashActive,
 }: ContactPageProps) {
+  const { openBookSession } = useBookSession()
   const pageHeroLoaded = useHeroLoaded(splashActive ? 1600 : 50)
 
   const heroClass = [
@@ -33,6 +35,23 @@ export default function ContactPage({
         </div>
         <div className="contact-hero-text">
           <h1>Let&apos;s Start Your Journey.</h1>
+          <button
+            onClick={openBookSession}
+            style={{
+              marginTop: '1.5rem',
+              padding: '10px 20px',
+              backgroundColor: 'var(--electric)',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              fontSize: '14px',
+              fontWeight: '500',
+              letterSpacing: '0.5px',
+            }}
+          >
+            Book a Session
+          </button>
         </div>
         <div className="animated-stripe" />
       </section>

@@ -7,6 +7,7 @@ import CTASection from '../components/CTASection'
 import JobApplicationModal from '../components/JobApplicationModal'
 import { images } from '../assets/paths'
 import { useHeroLoaded, useParallax, usePatternParallax } from '../hooks/useSiteEffects'
+import { useBookSession } from '../context/BookSessionContext'
 
 const focusAreas = [
   {
@@ -36,6 +37,7 @@ type HomePageProps = {
 
 export default function HomePage({ heroLoaded, splashActive }: HomePageProps) {
   const [applicationOpen, setApplicationOpen] = useState(false)
+  const { openBookSession } = useBookSession()
   const parallaxRef = useRef<HTMLDivElement>(null)
   const patternRef = useRef<HTMLDivElement>(null)
   const pageHeroLoaded = useHeroLoaded(splashActive ? 1600 : 50)
@@ -69,7 +71,25 @@ export default function HomePage({ heroLoaded, splashActive }: HomePageProps) {
                 Helping you strengthen your muscles, improve pelvic alignment, and build a
                 stronger core through guided movement and targeted exercises.
               </p>
-              <Button label="Get Started" href="/contact" white />
+              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <Button label="Get Started" href="/contact" white />
+                <button
+                  onClick={openBookSession}
+                  style={{
+                    padding: '10px 20px',
+                    backgroundColor: 'var(--electric)',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    fontSize: '14px',
+                    fontWeight: '500',
+                    letterSpacing: '0.5px',
+                  }}
+                >
+                  Book a Session
+                </button>
+              </div>
             </div>
           </div>
         </div>

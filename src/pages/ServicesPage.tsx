@@ -5,6 +5,7 @@ import StripeWrap from '../components/StripeWrap'
 import CTASection from '../components/CTASection'
 import { images } from '../assets/paths'
 import { useHeroLoaded } from '../hooks/useSiteEffects'
+import { useBookSession } from '../context/BookSessionContext'
 
 const serviceCards = [
   {
@@ -52,6 +53,7 @@ export default function ServicesPage({
   heroLoaded,
   splashActive,
 }: ServicesPageProps) {
+  const { openBookSession } = useBookSession()
   const pageHeroLoaded = useHeroLoaded(splashActive ? 1600 : 50)
 
   const heroClass = [
@@ -76,7 +78,25 @@ export default function ServicesPage({
               </h1>
             </div>
             <div className="hero-text">
-              <Button label="Get Started" href="/contact" white />
+              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <Button label="Get Started" href="/contact" white />
+                <button
+                  onClick={openBookSession}
+                  style={{
+                    padding: '10px 20px',
+                    backgroundColor: 'var(--electric)',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    fontSize: '14px',
+                    fontWeight: '500',
+                    letterSpacing: '0.5px',
+                  }}
+                >
+                  Book a Session
+                </button>
+              </div>
             </div>
           </div>
         </div>
