@@ -53,11 +53,9 @@ export default function Navigation({
         <Link className="nav-logo" to="/">
           <img
             src={markSrc}
-            alt=""
+            alt="Biomusclepilates Logo"
             className="logo-mark"
-            aria-hidden="true"
           />
-          <span className="logo-text">Biomusclepilates</span>
         </Link>
         <button
           type="button"
