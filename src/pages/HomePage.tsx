@@ -82,21 +82,22 @@ export default function HomePage({ heroLoaded, splashActive }: HomePageProps) {
             bottom: '50%',
             left: '50%',
             transform: 'translate(-50%, 50%)',
-            padding: '0 24px',
+            padding: '0 20px',
             backgroundColor: 'var(--electric)',
             color: 'white',
             border: 'none',
-            borderRadius: '4px',
+            borderRadius: '0',
             cursor: 'pointer',
             fontSize: '10px',
-            fontWeight: '600',
+            fontWeight: '400',
             letterSpacing: '2px',
             zIndex: 10,
-            height: '48px',
+            height: '56px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             textTransform: 'uppercase',
+            fontFamily: 'var(--font)',
           }}
         >
           Book a Session
@@ -149,20 +150,21 @@ export default function HomePage({ heroLoaded, splashActive }: HomePageProps) {
               <button
                 onClick={openBookSession}
                 style={{
-                  padding: '0 24px',
+                  padding: '0 20px',
                   backgroundColor: 'var(--electric)',
                   color: 'white',
                   border: 'none',
-                  borderRadius: '4px',
+                  borderRadius: '0',
                   cursor: 'pointer',
                   fontSize: '10px',
-                  fontWeight: '600',
+                  fontWeight: '400',
                   letterSpacing: '2px',
-                  height: '48px',
+                  height: '56px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   textTransform: 'uppercase',
+                  fontFamily: 'var(--font)',
                 }}
               >
                 Book a Session
