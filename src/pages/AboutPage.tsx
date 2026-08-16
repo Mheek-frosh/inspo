@@ -165,6 +165,7 @@ export default function AboutPage({ heroLoaded, splashActive }: AboutPageProps) 
           </>
         }
         buttonLabel="Start Your Journey"
+        showBookSessionButton
       />
     </>
   )

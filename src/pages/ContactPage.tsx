@@ -173,8 +173,28 @@ export default function ContactPage({
             development, pelvic stability, posture, or overall movement — and we&apos;ll
             help you determine the best place to begin.
           </p>
-          <div style={{ marginTop: 32 }}>
+          <div style={{ marginTop: 32, display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <Button label="Get Started" href="/contact" />
+            <button
+              onClick={openBookSession}
+              style={{
+                padding: '12px 24px',
+                backgroundColor: 'var(--electric)',
+                color: 'white',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontSize: '14px',
+                fontWeight: '600',
+                letterSpacing: '0.5px',
+                height: '48px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              Book a Session
+            </button>
           </div>
         </ScrollReveal>
       </section>
@@ -188,6 +208,7 @@ export default function ContactPage({
           </>
         }
         buttonLabel="Get Started"
+        showBookSessionButton
       />
     </>
   )

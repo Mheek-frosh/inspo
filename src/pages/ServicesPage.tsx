@@ -157,6 +157,7 @@ export default function ServicesPage({
         }
         subtext="Start your journey toward better strength, stability, and movement."
         buttonLabel="Get Started"
+        showBookSessionButton
       />
     </>
   )

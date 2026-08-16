@@ -144,7 +144,29 @@ export default function HomePage({ heroLoaded, splashActive }: HomePageProps) {
               Our programs focus on improving the way your body moves by strengthening key
               muscles, supporting better pelvic alignment, and developing a stronger core.
             </p>
-            <Button label="Get Started" href="/contact" />
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <Button label="Get Started" href="/contact" />
+              <button
+                onClick={openBookSession}
+                style={{
+                  padding: '12px 24px',
+                  backgroundColor: 'var(--electric)',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  letterSpacing: '0.5px',
+                  height: '48px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                Book a Session
+              </button>
+            </div>
           </ScrollReveal>
         </div>
         <div className="s2-right">
@@ -221,6 +243,7 @@ export default function HomePage({ heroLoaded, splashActive }: HomePageProps) {
         }
         subtext="Start your journey toward better strength, stability, and movement."
         buttonLabel="Get Started"
+        showBookSessionButton
       />
     </>
   )
