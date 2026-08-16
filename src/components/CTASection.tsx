@@ -47,19 +47,20 @@ export default function CTASection({
                 <button
                   onClick={openBookSession}
                   style={{
-                    padding: '12px 24px',
+                    padding: '0 24px',
                     backgroundColor: 'var(--electric)',
                     color: 'white',
                     border: 'none',
                     borderRadius: '4px',
                     cursor: 'pointer',
-                    fontSize: '14px',
+                    fontSize: '10px',
                     fontWeight: '600',
-                    letterSpacing: '0.5px',
+                    letterSpacing: '2px',
                     height: '48px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
+                    textTransform: 'uppercase',
                   }}
                 >
                   Book a Session
