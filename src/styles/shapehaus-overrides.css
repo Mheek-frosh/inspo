@@ -1,5 +1,11 @@
 /* ShapeHaus — white & blue theme overrides (keeps yellow bullets & arrow buttons) */
 
+/* CTA section icon size */
+.cta-logo-mark {
+  width: 40px !important;
+  height: 40px !important;
+}
+
 :root {
   --cloud: #e8eef5;
   --grey: #f4f7fb;
@@ -101,11 +107,9 @@
 
 /* Stronger light-nav background so links read on white sections */
 .nav[data-theme='light']:not(.nav-menu-open):before {
-  background: linear-gradient(
-    #ffffff 0%,
-    #fffffff2 55%,
-    #ffffffcc 100%
-  ) !important;
+  background: linear-gradient(#ffffff 0%,
+      #fffffff2 55%,
+      #ffffffcc 100%) !important;
 }
 
 .nav[data-theme='light']:not(.nav-menu-open) {
@@ -113,12 +117,10 @@
 }
 
 .nav[data-theme='dark']:not(.nav-menu-open):before {
-  background: linear-gradient(
-    #15213ccc 0%,
-    #15213c99 35%,
-    #15213c55 65%,
-    transparent 100%
-  ) !important;
+  background: linear-gradient(#15213ccc 0%,
+      #15213c99 35%,
+      #15213c55 65%,
+      transparent 100%) !important;
 }
 
 .nav[data-theme='dark'].nav-scrolled:not(.nav-menu-open) {
@@ -144,6 +146,7 @@
 }
 
 @media (max-width: 1024px) {
+
   .nav-links li.nav-active a,
   .nav-links li.nav-active:hover a {
     color: var(--electric) !important;
@@ -210,8 +213,8 @@
 .cta-logo-mark {
   opacity: 1 !important;
   transform: none !important;
-  width: 56px;
-  height: 56px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
 }
 
@@ -243,7 +246,7 @@
   background: linear-gradient(180deg, #626e7e 0%, #5a6575 45%, #505a68 100%);
 }
 
-.hero.hero--wide .hero-photo--reformer > img {
+.hero.hero--wide .hero-photo--reformer>img {
   position: relative;
   inset: auto;
   width: 100%;
@@ -255,12 +258,10 @@
 }
 
 .hero.hero--wide .hero-photo--reformer:after {
-  background: linear-gradient(
-    to bottom,
-    #5a657580 0%,
-    transparent 28%,
-    transparent 100%
-  );
+  background: linear-gradient(to bottom,
+      #5a657580 0%,
+      transparent 28%,
+      transparent 100%);
 }
 
 .hero.hero--wide .hero-bottom {
@@ -406,6 +407,7 @@
   70% {
     box-shadow: 0 0 0 9px #1d59ec00;
   }
+
   100% {
     box-shadow: 0 0 0 0 #1d59ec00;
   }
@@ -541,7 +543,7 @@
   transform: translateY(-1px);
 }
 
-.job-file-upload > span:last-child {
+.job-file-upload>span:last-child {
   display: flex;
   min-width: 0;
   flex-direction: column;
@@ -736,6 +738,7 @@
 .who-its-for .about-testimonial-attribution {
   padding-bottom: 144px;
 }
+
 .consultation-section {
   padding: var(--section-padding) 72px;
   border-bottom: 0.5px solid var(--cloud);
@@ -868,11 +871,13 @@
 }
 
 @keyframes floating-pulse {
+
   0%,
   100% {
     transform: translateY(0);
     box-shadow: 0 8px 32px #1d59ec40;
   }
+
   50% {
     transform: translateY(-4px);
     box-shadow: 0 12px 40px #1d59ec55;

@@ -29,7 +29,7 @@ export default function CTASection({
       <div className="cta-card">
         <ScrollReveal>
           <img
-            src={logos.markBlue}
+            src={logos.iconBlue}
             alt=""
             className="cta-logo-mark"
             aria-hidden="true"
@@ -81,8 +81,7 @@ export function CTAFooter() {
     <div className="cta-footer">
       <p className="cta-footer-copy">&copy; 2026 Biomusclepilates</p>
       <Link to="/" className="cta-wordmark-link">
-        <img src={logos.markWhite} alt="" className="cta-footer-mark" aria-hidden="true" />
-        <span className="cta-wordmark-text">Biomusclepilates</span>
+        <img src={logos.markWhite} alt="Biomusclepilates Logo" className="cta-wordmark" />
       </Link>
       <div className="cta-footer-meta">
         <Link className="cta-footer-credit" to="/privacy">

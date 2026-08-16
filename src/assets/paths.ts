@@ -18,6 +18,7 @@ export const logos = {
   markWhite: '/assets/logos/shapehaus-mark-white.png',
   favicon: '/assets/logos/favicon.png',
   faviconApple: '/assets/logos/favicon-180.png',
+  iconBlue: '/assets/logos/icon-blue.png',
 } as const
 
 export const icons = {
