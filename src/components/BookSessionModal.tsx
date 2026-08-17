@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const bookingUrl = 'https://biomusclepilates.breely.com/form/22140'
+export const bookingUrl = 'https://biomusclepilates.breely.com/form/22140'
 
 type BreelyDataLayerItem = {
   event?: string

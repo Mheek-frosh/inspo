@@ -5,6 +5,7 @@ import {
   useMemo,
   type ReactNode,
 } from 'react'
+import { bookingUrl } from '../components/BookSessionModal'
 
 type BookSessionContextValue = {
   openBookSession: () => void
@@ -14,7 +15,8 @@ const BookSessionContext = createContext<BookSessionContextValue | null>(null)
 
 export function BookSessionProvider({ children }: { children: ReactNode }) {
   const openBookSession = useCallback(() => {
-    document.querySelector<HTMLAnchorElement>('#breely-booking-trigger')?.click()
+    if (typeof window === 'undefined') return
+    window.location.assign(bookingUrl)
   }, [])
 
   const value = useMemo(
