@@ -56,6 +56,7 @@ export default function HomePage({ heroLoaded, splashActive }: HomePageProps) {
 
   return (
     <>
+      {/* Hero / landing section */}
       <section className={heroClass} id="hero" data-nav-theme="dark">
         <div className="animated-stripe" />
         <div className="hero-photo hero-photo--reformer">
@@ -105,6 +106,7 @@ export default function HomePage({ heroLoaded, splashActive }: HomePageProps) {
 
       <StripeWrap />
 
+      {/* Hiring callout */}
       <section className="hiring-banner" data-nav-theme="dark" aria-labelledby="hiring-title">
         <div className="hiring-banner-orbit" aria-hidden="true" />
         <ScrollReveal className="hiring-banner-inner">
@@ -133,6 +135,7 @@ export default function HomePage({ heroLoaded, splashActive }: HomePageProps) {
         onClose={() => setApplicationOpen(false)}
       />
 
+      {/* Core offer overview */}
       <section className="s2" id="what-we-do" data-nav-theme="light">
         <div className="s2-left">
           <ScrollReveal className="s2-content">
@@ -200,6 +203,7 @@ export default function HomePage({ heroLoaded, splashActive }: HomePageProps) {
         </div>
       </section>
 
+      {/* Why it matters / value proposition */}
       <section className="about" id="why-it-matters" data-nav-theme="light">
         <div className="about-photo">
           <div className="about-photo-wrap">
@@ -235,6 +239,7 @@ export default function HomePage({ heroLoaded, splashActive }: HomePageProps) {
 
       <WhoItsFor />
 
+      {/* Final conversion section */}
       <CTASection
         headline={
           <>

@@ -29,6 +29,7 @@ export default function ContactPage({
 
   return (
     <>
+      {/* Hero / introduction */}
       <section className={heroClass} data-nav-theme="dark">
         <div className="contact-hero-photo">
           <img src={images.people} alt="Start your strength journey" />
@@ -63,6 +64,7 @@ export default function ContactPage({
 
       <StripeWrap />
 
+      {/* Contact details and form */}
       <section className="contact-main" data-nav-theme="light">
         <div className="contact-left">
           <h2>
@@ -160,6 +162,7 @@ export default function ContactPage({
         </div>
       </section>
 
+      {/* Additional consultation CTA */}
       <section className="consultation-section" data-nav-theme="light">
         <ScrollReveal>
           <p className="eyebrow">Consultation</p>
@@ -201,6 +204,7 @@ export default function ContactPage({
         </ScrollReveal>
       </section>
 
+      {/* Final call to action */}
       <CTASection
         headline={
           <>

@@ -34,6 +34,7 @@ export default function AboutPage({ heroLoaded, splashActive }: AboutPageProps) 
 
   return (
     <>
+      {/* Hero / introduction */}
       <section className={heroClass} data-nav-theme="dark">
         <div className="animated-stripe" />
         <div className="about-hero-photo">
@@ -80,6 +81,7 @@ export default function AboutPage({ heroLoaded, splashActive }: AboutPageProps) 
 
       <StripeWrap />
 
+      {/* Philosophy and approach */}
       <section className="about-strategy" data-nav-theme="light">
         <ScrollReveal className="about-strategy-text">
           <p className="eyebrow">Our Approach</p>
@@ -105,6 +107,7 @@ export default function AboutPage({ heroLoaded, splashActive }: AboutPageProps) 
         </div>
       </section>
 
+      {/* Visual crop path for the portrait section */}
       <svg width="0" height="0" aria-hidden="true" style={{ position: 'absolute' }}>
         <defs>
           <clipPath id="cara-clip" clipPathUnits="objectBoundingBox">
@@ -113,6 +116,7 @@ export default function AboutPage({ heroLoaded, splashActive }: AboutPageProps) 
         </defs>
       </svg>
 
+      {/* Core values and methodology */}
       <section className="about-cara" data-nav-theme="light">
         <ScrollReveal className="about-cara-content">
           <div className="about-cara-header">
@@ -141,6 +145,7 @@ export default function AboutPage({ heroLoaded, splashActive }: AboutPageProps) 
         </div>
       </section>
 
+      {/* Audience / who this is for */}
       <section className="consultation-section" data-nav-theme="light">
         <ScrollReveal>
           <p className="eyebrow">Who We Help</p>

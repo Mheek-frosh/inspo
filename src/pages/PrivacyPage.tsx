@@ -3,6 +3,7 @@ import { StandaloneFooter } from '../components/CTASection'
 export default function PrivacyPage() {
   return (
     <>
+      {/* Privacy policy content */}
       <main className="legal-page" data-nav-theme="light">
         <div className="legal-content">
           <p className="eyebrow">Privacy</p>

@@ -66,6 +66,7 @@ export default function ServicesPage({
 
   return (
     <>
+      {/* Hero / introduction */}
       <section className={heroClass} data-nav-theme="dark">
         <div className="animated-stripe" />
         <div className="svc-hero-photo">
@@ -112,6 +113,7 @@ export default function ServicesPage({
 
       <StripeWrap />
 
+      {/* Program overview */}
       <section className="svc-approach" data-nav-theme="light">
         <ScrollReveal className="svc-approach-header">
           <h2>
@@ -124,6 +126,7 @@ export default function ServicesPage({
         </ScrollReveal>
       </section>
 
+      {/* Service offerings */}
       <section className="svc-offerings" data-nav-theme="light">
         <ScrollReveal className="svc-offerings-header">
           <h2>
@@ -147,6 +150,7 @@ export default function ServicesPage({
         </div>
       </section>
 
+      {/* Final action */}
       <CTASection
         headline={
           <>
