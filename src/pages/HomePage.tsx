@@ -76,30 +76,7 @@ export default function HomePage({ heroLoaded, splashActive }: HomePageProps) {
             </div>
           </div>
         </div>
-        <button
-          onClick={openBookSession}
-          style={{
-            position: 'absolute',
-            bottom: '50%',
-            left: '50%',
-            transform: 'translate(-50%, 50%)',
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            height: '70px',
-            padding: '0 40px',
-            backgroundColor: 'var(--electric)',
-            color: 'white',
-            border: 'none',
-            cursor: 'pointer',
-            fontSize: '14px',
-            fontWeight: '500',
-            letterSpacing: '2px',
-            textTransform: 'uppercase',
-            fontFamily: 'var(--font)',
-            zIndex: 10,
-          }}
-        >
+        <button className="hero-book-session" onClick={openBookSession} type="button">
           BOOK A SESSION
         </button>
       </section>
